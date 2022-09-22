@@ -1,0 +1,41 @@
+Source: polkit-kde-agent-1
+Section: kde
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Scarlett Moore <sgmoore@kde.org>,
+           Patrick Franz <deltaone@debian.org>,
+           Norbert Preining <norbert@preining.info>,
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               extra-cmake-modules (>= 5.86~),
+               gettext,
+               libkf5coreaddons-dev (>= 5.86~),
+               libkf5crash-dev (>= 5.86~),
+               libkf5dbusaddons-dev (>= 5.86~),
+               libkf5i18n-dev (>= 5.86~),
+               libkf5iconthemes-dev (>= 5.86~),
+               libkf5widgetsaddons-dev (>= 5.86~),
+               libkf5windowsystem-dev (>= 5.86~),
+               libpolkit-qt5-1-dev (>= 0.112.0),
+               pkg-kde-tools (>= 0.15.16),
+               qtbase5-dev (>= 5.15.0~),
+Standards-Version: 4.5.0
+Homepage: https://invent.kde.org/plasma/polkit-kde-agent-1
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/kde/polkit-kde-agent-1
+Vcs-Git: https://salsa.debian.org/qt-kde-team/kde/polkit-kde-agent-1.git
+Rules-Requires-Root: no
+
+Package: polkit-kde-agent-1
+Architecture: any
+Depends: policykit-1, ${misc:Depends}, ${shlibs:Depends}
+Provides: polkit-1-auth-agent
+Description: KDE dialogs for PolicyKit
+ PolicyKit is an application-level toolkit for defining and handling the policy
+ that allows unprivileged processes to speak to privileged processes.
+ .
+ It is a framework for centralizing the decision making process with respect to
+ granting access to privileged operations (like calling the HAL Mount() method)
+ for unprivileged (desktop) applications.
+ .
+ PolicyKit-Kde provides a D-Bus session bus service that is used to
+ bring up authentication dialogs used for obtaining privileges.
